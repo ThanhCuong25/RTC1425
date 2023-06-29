@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var images = [
+            { height: '34px', width: '39px' },
+            { height: '54px', width: '19px' },
+            { height: '83px', width: '75px' },
+        ];
+const results = images.map(item=>{
+    return { height: item.height}
+});
+console.log(results);
+
+// filter
+var nums = [2,3,4,5];
+const kq = nums.filter( n =>{
+    return n%2 !== 0;
+})
+console.log(kq);
+
+// Set
+const animals = new Set(["dog", "cat", "pig","cat"])
+    animals.add("horse")
+    animals.has("horse")
+    animals.delete("dog")
+const animalsNew = [...animals];
+console.log(animalsNew);
+for (const item of animals){
+    console.log(item);
+}
+    </script>
+</body>
+
+</html>
