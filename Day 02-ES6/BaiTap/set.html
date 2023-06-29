@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Peter cần quản lý danh sách động vật trong sở thú, đôi khi cần thêm 1 loài vật mới vào danh sách, đôi khi cần kiểm tra xem loài vật mới đã có trong danh sách chưa, có lúc thì cần xóa một loài động vật khỏi danh sách quản lý của sở thú. Ngoài ra khi có đoàn kiểm tra tới, Peter cần in ra danh sách các loài động vật hiện đang có trong sở thú.
+
+        const animals = new Set(["dog", "cat", "pig"]);
+        animals.add("horse");
+        animals.delete("cat");
+
+        console.log("New animals:" + animals.has("horse"));
+        const arrAnimals =[...animals];
+        console.log("New animals:" + arrAnimals.includes("horse"));
+        console.log(arrAnimals);
+
+    </script>
+</body>
+</html>
