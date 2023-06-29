@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Person {
+            constructor(name, construct) {
+                this._name = name;
+                this._construct = construct;
+            }
+
+            set name(valueName) {
+                this._name = valueName;
+            }
+            get name() { return this._name; }
+
+            walk(step) {
+                console.log(this._name + " làm " + step + " bước")
+            }
+        }
+
+        class Programmer extends Person {
+            constructor(name,construct,language) {
+                super(name,construct,language);
+                this._language = language;
+            }
+
+            set language(valueLanguage) {
+                this._language = valueLanguage;
+            }
+            get language() { return this._language; }
+
+            writeCode(tool) {
+                console.log("Công cụ: "+tool);
+            }
+        }
+
+        const fronend = new Programmer("An","web bán hàng", "javascript")
+        fronend.walk(5);
+        fronend.writeCode("visual studio")
+        console.log(fronend);
+    </script>
+</body>
+
+</html>
