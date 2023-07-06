@@ -27,7 +27,7 @@
 
         class Programmer extends Person {
             constructor(name,construct,language) {
-                super(name,construct,language);
+                super(name,construct);
                 this._language = language;
             }
 
@@ -45,6 +45,10 @@
         fronend.walk(5);
         fronend.writeCode("visual studio")
         console.log(fronend);
+
+        const a= [4,5,6,7];
+        const result= a.reduce((result,item)=> result+item,0);
+        console.log(result);
     </script>
 </body>
 
