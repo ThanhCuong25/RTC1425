@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <h1>GIPHY PARTY</h1>
+        <form action="ddc.php" method="post">
+            <input type="text" id="name" placeholder="Enter Search">
+            <input type="button" id="btn" value="Search">
+        </form>
+    </div>
+    <div id="img">
+       
+    </div>
+
+    <script>
+        let nameEl = document.getElementById("name");
+        let btnEl = document.getElementById("btn");
+        let imgEl = document.getElementById("img");
+
+     fetch("http://api.giphy.com/v1/gifs/search?q=dog&api_key=YlLp06fMrDNxwTvPXww13LN3WvaH1Iyk")
+            .then(res => { return res.json() })
+            // .then(res => {
+            //     res.forEach(element => {
+            //         console.log(element.data[0]);
+            //     });
+            // })
+            .then( res => { res.data. forEach(element => {
+               let img= document.createElement('img')
+               img.src= element.images.downsized.url;
+
+               imgEl.appendChild(img)
+            });})
+            .then(res => { console.log(res.data)})
+            .catch(err => { console.log(err) });
+
+    </script>
+</body>
+
+</html>
