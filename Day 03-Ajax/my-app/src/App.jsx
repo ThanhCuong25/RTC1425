@@ -5,8 +5,15 @@ import React from 'react';
 function App() {
   // const name = "Thành"
   const fruits = ["Apple", "Banan", "Orang", "Aprict", "Blackrowan", "Cranbrry"]
+  function handleClick(e) {  
+    e.preventDefault();  
+    console.log('You had clicked a Link.');  
+}  
   return (
     <div>
+         <a href="https://learn.codegym.vn/courses/reactjs" onClick={handleClick}>
+              Click_Me  
+        </a>  
       <h1>List of fruit</h1>
       <ul>
         {fruits.map(fruit =>

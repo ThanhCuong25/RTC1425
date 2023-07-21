@@ -39,7 +39,7 @@ const Infosv = () => {
         <div>
             <table>
                 <tr>
-                    <th>Company</th>
+                    <th style={{color:'red'}}>Company</th>
                     <th>Contact</th>
                     <th>Coutry</th>
                 </tr>

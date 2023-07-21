@@ -7,6 +7,7 @@ import Button from './baitap/Button';
 import Background from './baitap/Background';
 import Reshello from './baitap/Reshello';
 import Collapse from './baitap/Collapse';
+import Calculator from './baitap/Calculator';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,6 +17,7 @@ root.render(
 <Background/>
 <Reshello/>
 <Collapse/>
+<Calculator/>
   </React.StrictMode>
 );
 
