@@ -1,9 +1,10 @@
 import React from "react";
 import { Formik } from "formik";
-const FormLogin = () => {
-    const REGEX = {
+
+  const REGEX = {
         email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
     };
+const FormLogin = () => {
 
     const handleValidate = (e) => {
         const error={};

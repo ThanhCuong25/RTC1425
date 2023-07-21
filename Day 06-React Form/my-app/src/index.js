@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import FormRegister from './formik/FormRegister';
 import FormLogin from './formik/FormLogin';
 import ContactForm from './formik/contactForm/ContactForm';
+import MailForm from './formik/mailForm/MailForm';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -15,6 +16,7 @@ root.render(
     <FormRegister/>
     <FormLogin/>
    <ContactForm/>
+   <MailForm/>
   </React.StrictMode>
 );
 
