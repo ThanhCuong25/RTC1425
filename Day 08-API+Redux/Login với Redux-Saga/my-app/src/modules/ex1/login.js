@@ -16,9 +16,8 @@ const Login = () => {
     }
 
 
-    const handleLogin = () => {
-        dispatch({ type: "LOGIN_SUCCESS", payload: {user}})
-        if (selector.userlogins.username === "admin" || selector.userlogins.password === "letmein") {
+    const handleLogin = () => {    
+        if (user.username === "admin" && user.password === "letmein") {
             navigate('/users')
         }
     }
