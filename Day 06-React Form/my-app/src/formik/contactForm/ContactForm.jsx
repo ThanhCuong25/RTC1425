@@ -23,7 +23,7 @@ const ContactForm = () => {
         >
             {({ handleSubmit, handleChange, values, errors }) => (
                 <>
-                    <h1>Login</h1>
+                    <h1>ContactForm</h1>
                     <div>
                         <label htmlFor="">Name</label>
                         <input type="text" name="name" onChange={handleChange} value={values.name} />

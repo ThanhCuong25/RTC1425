@@ -1,26 +1,25 @@
-import React from "react";
-import { Formik } from "formik";    
+import { Formik } from "formik";
+import { useNavigate } from "react-router-dom";
+import routes from "../routes";
 
-  const REGEX = {
-        email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
-    };
-const FormLogin = () => {
-
+const Login = () => {
+let navigate = useNavigate();
     const handleValidate = (e) => {
-        const error={};
-        if(!e.email){
-            error.email ="Nhập thiếu email"
-        } else if(!REGEX.email.test(e.email)){
-            error.email ="Địa chỉ email không hợp lệ"
+        const error = {}
+        if (e.email !== "admin@gmail.com") {
+            error.email = "Nhập sai email"
         }
-        if(!e.password){
-            error.password ="Nhập thiếu password"
+        if (e.password !== "letmein") {
+            error.password = "Nhập sai password"
         }
         return error
     }
 
-    const handleFormSubmit = (valuesform) => {
-        console.log(valuesform);
+    const handleFormSubmit = (value) => {
+        if (value.name === "admin@gmail.com" || value.password === "letmein") {
+           navigate(routes.web.authentication.access)
+        } 
+
     }
     return (
         <Formik
@@ -28,12 +27,11 @@ const FormLogin = () => {
                 email: "",
                 password: ""
             }}
-
-           validateOnBlur={false}
+            validateOnBlur={false}
             validate={handleValidate}
             onSubmit={handleFormSubmit}
         >
-            {({ handleChange, handleSubmit, errors, values, }) => (
+            {({ handleChange, values, errors, handleSubmit }) => (
                 <>
                     <h1>Login</h1>
                     <div>
@@ -52,4 +50,4 @@ const FormLogin = () => {
         </Formik>
     )
 }
-export default FormLogin
+export default Login
