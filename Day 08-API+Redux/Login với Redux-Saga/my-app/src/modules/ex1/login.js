@@ -25,7 +25,7 @@ const Login = () => {
         <form>
             <label>User name</label>
             <input name="username" onChange={handleChange} type="text" value={user.name} />
-
+{}
             <label>Password</label>
             <input name="password" onChange={handleChange} type="password" value={user.password} />
 

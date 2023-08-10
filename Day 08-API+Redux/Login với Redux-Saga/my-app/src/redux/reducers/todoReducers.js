@@ -1,6 +1,5 @@
 const initialState = {
     todos: [],
-    userlogins: {}
 }
 
 const todoReducers = (state = initialState, action) => {
@@ -9,9 +8,9 @@ const todoReducers = (state = initialState, action) => {
             return {
                 todos: action.payload
             }
-        case "LOGIN_SUCCESS":
+        case "DELETE_TODO":
             return {
-                userlogins: action.payload
+                todos: state.todos.filter(item=> item.id !== action.payload)
             }
         default:
             return state
