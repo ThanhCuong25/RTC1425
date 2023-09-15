@@ -1,0 +1,16 @@
+{
+    "users": [
+        {
+            "id":1,
+            "name": "Thành"
+        },
+        {
+            "id":2,
+            "name": "Cường"
+        },
+        {
+            "id":3,
+            "name": "Trung"
+        }
+    ]
+}

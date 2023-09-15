@@ -1,24 +1,24 @@
 import React from "react";
 import { Formik } from "formik";
 
-  const REGEX = {
-        to: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
-    };
+const REGEX = {
+    to: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
+};
 const MailForm = () => {
-const [file,setFile] = React.useState(null)
+    const [file, setFile] = React.useState(null)
 
     const handleValidate = (e) => {
-        const error={};
-        if(!e.to){
-            error.to ="Nhập thiếu email"
-        } else if(!REGEX.to.test(e.to)){
-            error.to ="Địa chỉ email không hợp lệ"
+        const error = {};
+        if (!e.to) {
+            error.to = "Nhập thiếu email"
+        } else if (!REGEX.to.test(e.to)) {
+            error.to = "Địa chỉ email không hợp lệ"
         }
-        if(!e.title){
-            error.title ="Nhập thiếu title"
+        if (!e.title) {
+            error.title = "Nhập thiếu title"
         }
-        if(!e.message){
-            error.message ="Nhập thiếu message"
+        if (!e.message) {
+            error.message = "Nhập thiếu message"
         }
         // if(!e.file){
         //     error.file = "Thiếu file"
@@ -26,19 +26,19 @@ const [file,setFile] = React.useState(null)
         return error
     }
 
-    const handleFormSubmit = (valuesform,formik) => {
-       alert(valuesform ? "Sign in successfully": "Please fill out all the fields")
-       formik.resetForm()
+    const handleFormSubmit = (valuesform, formik) => {
+        alert(valuesform ? "Sign in successfully" : "Please fill out all the fields")
+        formik.resetForm()
     }
     return (
         <Formik
             initialValues={{
                 to: "",
                 title: "",
-                message:""
+                message: ""
             }}
 
-           validateOnBlur={false}
+            validateOnBlur={false}
             validate={handleValidate}
             onSubmit={handleFormSubmit}
         >
@@ -61,7 +61,7 @@ const [file,setFile] = React.useState(null)
                         {errors.message && <p>{errors.message}</p>}
                     </div>
                     <div>
-                        <input type="file" name="file" onChange={(e)=> setFile(e.currentTarget.files[0])}/>
+                        <input type="file" name="file" onChange={(e) => setFile(e.currentTarget.files[0])} />
                         {/* {errors.file && <p>{errors.file}</p>} */}
                     </div>
                     <button type="submit" onClick={handleSubmit}>Submit</button>
